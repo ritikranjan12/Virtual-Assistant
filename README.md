@@ -1,4 +1,4 @@
-# Virtual-Assistant
+# Jarvis GUI (Virtual-Assistant)
 This is a virtual assistant which works on our voice command and answer us.
 The first step is to install the required package, create a virtual  environment and use pip command to install the dependencies.
 pip install subprocess,
