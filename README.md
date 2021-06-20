@@ -8,4 +8,7 @@ pip install wolframalpha,
 pip install pyttsx3,
 pip install opencv-python,
 pip install pywhatkit,
+You have to install pyaudio using pip 
+if installing pyaudio shows error then follow these steps
+pip install pipwin then install pipwin install pyaudio
 After this you are all set to go and run your jarvis!!!!!!, Code is in progress so for any mistakes just do pull request and you get the chance to correct it.
