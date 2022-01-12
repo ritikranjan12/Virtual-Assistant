@@ -171,7 +171,21 @@ def main():
                 speak (answer)
                 print (answer)
 
+            elif "reccord" in statement:
+                def engine():
+                    pg.keyDown("win")
+                    pg.keyDown("alt")
+                    pg.press("r")
+                    pg.keyUp("alt")
+                    pg.keyUp("win")
 
+                speak('Screen Recording Started')
+                engine()
+                n=audio()
+                if "stop" in n:
+                    engine()
+                    speak('Screen Recording Ended')
+                    
             elif "send" in statement:
                 speak ("What is the message sir?")
                 message =audio ()
