@@ -12,7 +12,7 @@ import wolframalpha
 import pyttsx3
 import os
 import cv2
-import pywhatkit as kit
+# import pywhatkit as kit
 import tkinter as tk
 from tkinter import *
 
@@ -72,11 +72,11 @@ def main():
                 speak ("i am here")
 
 
-            elif 'open youtube' in statement:
-                speak ("What do you want to see on Youtube sir?")
-                video = audio ()
-                kit.playonyt (video)
-                time.sleep (3)
+            # elif 'open youtube' in statement:
+            #     speak ("What do you want to see on Youtube sir?")
+            #     video = audio ()
+            #     kit.playonyt (video)
+            #     time.sleep (3)
 
 
             elif 'open facebook' in statement:
@@ -171,6 +171,22 @@ def main():
                 speak (answer)
                 print (answer)
 
+            elif "capture screen" in statement:
+                def engine():
+                    pyautogui.keyDown("win")
+                    pyautogui.keyDown("alt")
+                    pyautogui.press("r")
+                    pyautogui.keyUp("alt")
+                    pyautogui.keyUp("win")
+
+                speak('Screen Recording Started')
+                engine()
+                while(True):
+                    n=audio()
+                    if "stop" in n:
+                        engine()
+                        speak('Screen Recording Ended')
+                        break
 
             elif "send" in statement:
                 speak ("What is the message sir?")
@@ -204,7 +220,6 @@ def main():
                     main = data ['main']
                     temperature = main ['temp'] - 273.15
                     t = round (temperature, 2)
-                    weather_description = z[0]["description"]
                     speak (f"The temperature of {city} is {t} degree celcius")
                 else:
                     speak ("can't find the city sir")
@@ -279,14 +294,14 @@ root.geometry("1300x800")
 
 root.title("J.A.R.V.I.S")
 
-
-# Add image file
-bg = PhotoImage( file = "C:\\Users\\Ritik\\OneDrive\\nfs\\Bgm\\jarvis.gif")
-
-# Show image using label
-label1 = Label( root, image = bg)
-
-label1.place(x = 0,y = 0)
+#
+# # Add image file
+# bg = PhotoImage( file = "C:\\Users\\Ritik\\Downloads\\R.jfif")
+#
+# # Show image using label
+# label1 = Label( root, image = bg)
+#
+# label1.place(x = 0,y = 0)
 
 
 bttn = tk.Button(text = 'RUN', command=start,fg = 'yellow',
